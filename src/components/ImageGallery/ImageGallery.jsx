@@ -21,9 +21,6 @@ const ImageGallery = ({ images, onModalClick }) => {
 ImageGallery.propTypes = {
   images: PropTypes.array.isRequired,
   onModalClick: PropTypes.func.isRequired,
-  id: PropTypes.string,
-  webformatURL: PropTypes.string,
-  tags: PropTypes.string,
 };
 
 export default ImageGallery;
