@@ -19,13 +19,13 @@ class Searchbar extends Component {
 
   handleSubmit = evt => {
     evt.preventDefault();
-    const { onSubmit } = this.props;
+    // const { onSubmit } = this.props;
 
     if (this.state.searchInput.trim() === '') {
       return 'Please enter the field ';
     }
 
-    onSubmit(this.state);
+    // onSubmit(this.state);
     this.onFormReset();
   };
 
@@ -59,4 +59,7 @@ class Searchbar extends Component {
   }
 }
 
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 export default Searchbar;
