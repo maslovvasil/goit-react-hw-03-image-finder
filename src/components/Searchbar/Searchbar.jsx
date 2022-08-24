@@ -29,9 +29,9 @@ class Searchbar extends Component {
     this.onFormReset();
   };
 
-  onFormReset = () => {
-    this.setState({ searchInput: '' });
-  };
+  // onFormReset = () => {
+  //   this.setState({ searchInput: '' });
+  // };
 
   render() {
     const { searchInput } = this.state;
@@ -58,9 +58,5 @@ class Searchbar extends Component {
     );
   }
 }
-
-Searchbar.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
 
 export default Searchbar;
