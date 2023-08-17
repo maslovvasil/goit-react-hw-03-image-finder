@@ -1,3 +1,5 @@
+import { Notify } from 'notiflix';
+
 import PropTypes from 'prop-types';
 import { Component } from 'react';
 import css from './Searchbar.module.css';
@@ -22,11 +24,12 @@ class Searchbar extends Component {
     const { onSubmit } = this.props;
 
     if (this.state.searchInput.trim() === '') {
-      return 'Please enter the field ';
+      Notify.info('Please enter the field ');
+      return;
     }
 
     onSubmit(this.state);
-    this.onFormReset();
+    // this.onFormReset();
   };
 
   // onFormReset = () => {
@@ -57,6 +60,10 @@ class Searchbar extends Component {
       </header>
     );
   }
+}
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func,
 }
 
 export default Searchbar;
