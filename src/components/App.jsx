@@ -61,7 +61,10 @@ export class App extends Component {
   }
 
   onFormSubmitHandler = ({ searchInput }) => {
-    this.setState({ searchKey: searchInput, gallery: [] });
+    if(this.state.searchInput === searchInput) {
+      return alert (`Ви вже дивитися ${searchInput}`);
+      }
+    this.setState({ searchKey: searchInput, gallery: [], page: 1 });
   };
 
   onLoadButtonClick = () => {
@@ -69,9 +72,12 @@ export class App extends Component {
   };
 
   openModal = largeImageURL => {
-    this.setState({ showModal: true });
-    this.setState({ largeImage: largeImageURL });
+    this.setState({
+      showModal: true,
+      largeImage: largeImageURL
+    });
   };
+  
 
   closeModal = evt => {
     this.setState(({ showModal }) => ({ showModal: !showModal }));
