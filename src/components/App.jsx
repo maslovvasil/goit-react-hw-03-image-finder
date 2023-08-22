@@ -60,12 +60,15 @@ export class App extends Component {
     }
   }
 
+
   onFormSubmitHandler = ({ searchInput }) => {
-    if(this.state.searchInput === searchInput) {
-      return alert (`Ви вже дивитися ${searchInput}`);
-      }
-    this.setState({ searchKey: searchInput, gallery: [], page: 1 });
+    if (this.state.searchKey === searchInput) {
+      alert(`Ви вже шукаєте за запитом "${searchInput}"`);
+    } else {
+      this.setState({ searchKey: searchInput, gallery: [], page: 1 });
+    }
   };
+  
 
   onLoadButtonClick = () => {
     this.setState(prevState => ({ page: prevState.page + 1 }));
@@ -77,7 +80,6 @@ export class App extends Component {
       largeImage: largeImageURL
     });
   };
-  
 
   closeModal = evt => {
     this.setState(({ showModal }) => ({ showModal: !showModal }));
